@@ -16,7 +16,7 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://roosz.github.io/informatievisualisatie/  # Online location of your book (change this to your GitHub repository link)
+  url: https://github.com/roosz/informatievisualisatie # Online location of your book (change this to your GitHub repository link)
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
@@ -29,7 +29,7 @@ html:
 # Add launch buttons
 launch_buttons:
   binderhub_url: ""
-  colab_url: "https://colab.research.google.com"
+  colab_url: ""
   jupyterhub_url: ""
 
 sphinx:
