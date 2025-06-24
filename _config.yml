@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: ProposaSl E17 # Change this to your book title.
-author: E17 # Change this to your name (or your team/organization name).
+title: Datastory # Change this to your book title.
+author: Roos Brouwer # Change this to your name (or your team/organization name).
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

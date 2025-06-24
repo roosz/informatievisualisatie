@@ -5,8 +5,3 @@ format: jb-book
 root: docs/home
 chapters:
 - file: docs/introductie
-    title: Introductie
-- file: docs/datastory
-    title: Datastory
-- file: docs/datasets
-    title: Datasets
