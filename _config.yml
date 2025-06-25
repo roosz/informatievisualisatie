@@ -23,10 +23,10 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  hide_code_cells: true
   use_issues_button: true
   use_repository_button: true
   toc: true
-  hide_code_cellss: true
 
 # Add launch buttons
 launch_buttons:
