@@ -4,5 +4,6 @@
 format: jb-book
 root: docs/home
 chapters:
-- file: docs/officiele versie
 - file: docs/introductie
+- file: docs/officiele versie
+- file: docs/datasets
