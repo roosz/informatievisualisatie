@@ -26,6 +26,7 @@ html:
   use_issues_button: true
   use_repository_button: true
   toc: true
+  hide_code_cellss: true
 
 # Add launch buttons
 launch_buttons:
