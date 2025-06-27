@@ -4,5 +4,7 @@
 format: jb-book
 root: docs/home
 chapters:
-- file: docs/voorindatasory
 - file: docs/datasets
+- file: docs/voorindatasory
+- file: reflectie
+- file: docs/werkverdeling
