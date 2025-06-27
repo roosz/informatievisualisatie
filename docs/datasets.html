@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Datasets &#8212; Datastory</title>
+    <title>Dataset en preprocessing &#8212; Datastory</title>
   
   
   
@@ -175,7 +175,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Datasets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dataset en preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="voorindatasory.html">De relatie tussen zeespiegelstijging en tsunami’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reflectie.html">Reflectie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="werkverdeling.html">Werkverdeling</a></li>
@@ -364,7 +364,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Datasets</h1>
+    <h1>Dataset en preprocessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,7 +374,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opschonen">Opschonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabelenbeschrijving">Variabelenbeschrijving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregaties">Aggregaties</a></li>
 </ul>
             </nav>
         </div>
@@ -386,13 +387,39 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="datasets">
-<h1>Datasets<a class="headerlink" href="#datasets" title="Link to this heading">#</a></h1>
-<p>We wisten eigenlijk al snel waar we onze datastory over wilden houden, namenlijk klimaatverandering. We gingen gelijk kijken naar natuurrampen, die door klimaatverandering steeds meer lijken voor te komen en te verergeren. Dit wilden we dus ook gaan onderzoeken en hier een data story voor maken. Uiteindelijk hebben we hier 2 datasets voor gevonden. De eertse dataset bevat alle genoteerde en geobserveerde natuurrampen in de wereld van 1900 tot 2021. Dit geeft ons inzichten in wanneer en waar tsunami’s plaatsvonden en hoe erg ze waren op de schaal van total_deaths, total_affected, insured_damages, total_damages. Dit wilden we combineren met een dataset die de zeespiegelstijging weergeeft. Hier hebben we ook een dataset voor gevonden die vanaf 1880 in julie de zeespiegelstijging bevat.</p>
-<section id="opschonen">
-<h2>Opschonen<a class="headerlink" href="#opschonen" title="Link to this heading">#</a></h2>
-<p>De eerste dataset over natuurrampen is natuurlijkk super groot en veel was voor ons overbodig, denk aan natuurrampen zoals tornados of modderstromen die helemaal niks met Tsunami’s te maken hebben. Hierom hebben we 2 subsets gemaakt. Eerst een subset van Tsunami’s zelf, waar alleen de waardes van de kolommen zijn meegenomen als het om een Tsunami ging. Vervolgens hebben we hetzelfde gedaan met de natuurramp Flood, omdat dit een gevolg van een Tsunami kan zijn. Hierin zijn alle Nan waardes omgezet naar 0, zodat ze alsnog in onze grafieken tevoorschijn kwamen. Toen zijn deze subsets samengevoegd, en die samengevoegde set is weer samengevoegd met de dataset van zeespiegelstijging, eigenlijk alle variabelen die daarin voorkwamen hadden wij nodig. Dat is het jaar van de meting en de zeespiegelstijging in mm. Met deze uiteindelijke samengevoegde dataset zijn we aan de slag gegaan.</p>
-<p>Dit resulteerde in een dataset van 57 rijen en 14 variabelen. Enkele variabelen hiervan zijn: ‘Total Affected’, “Total Damages (‘000 US$)”, ‘Total Deaths’, ‘Total Affected’ en  ‘mmfrom1993-2008average’.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="dataset-en-preprocessing">
+<h1>Dataset en preprocessing<a class="headerlink" href="#dataset-en-preprocessing" title="Link to this heading">#</a></h1>
+<p>Er is gestart met het selecteren van twee relevante datasets van Kaggle, en een dataset met wereldwijde natuurrampen vanaf 1900 en een dataset met de jaarlijkse zeespiegelstijging gemeten in juli vanaf 1880. Deze datasets boden op het eerste zicht voldoende aanknopingspunten voor het uitvoeren van analyses vanuit verschillende perspectieven. <br> <br>
+De eerste stap in preprocessing bestond uit het samenvoegen van de datasets op basis van het jaartal, zodat elk jaar eenduidge data bevatte. Aansluitend zijn enkel de relevante variabelen behouden. In het geval van de natuurrampendataset werd uitsluitend informatie met betrekking tot tsunami’s gefilterd. Hierbij zijn de voglende variabelen geselecteerd: <br>
+<code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Disaster</span> <span class="pre">Subtype</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code>, <code class="docutils literal notranslate"><span class="pre">Region</span></code>, <code class="docutils literal notranslate"><span class="pre">Continent</span></code>, <code class="docutils literal notranslate"><span class="pre">Origin</span></code>, <code class="docutils literal notranslate"><span class="pre">River</span> <span class="pre">Basin</span></code>, <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Deaths</span></code>, <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Affected</span></code>, <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Damages</span> <span class="pre">('000</span> <span class="pre">US$')</span></code>, <code class="docutils literal notranslate"><span class="pre">Latitude</span></code>, <code class="docutils literal notranslate"><span class="pre">Longitude</span></code>, en <code class="docutils literal notranslate"><span class="pre">Location</span></code>. <br><br>
+Daarnaast zijn outliers verwijderd voor de eerste vier visualisaties. Deze stap was noodzakelijk om een helder beeld te krijgen van de onderliggende patronen in de data, aangezien extreme waarden (zoals de tsunami in Japan in 2011 en de tsunami in Indonesië in 2004) de resultaten sterk vertekenden. In latere visualisaties zijn deze outliers juist meegenomen om het volledige spectrum van de impact zichtbaar te maken.<br><br>
+Tijdens het analyseren van de datasets bleek het dat de kolom <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Damages</span> <span class="pre">('000</span> <span class="pre">US$)</span></code> weinig tot geen data bevatte. Om deze kolom toch op te vullen is er een derde dataset bijgevonden. Deze dataset bevat tsunami’s en bijbehorende data van tsunami’s vanaf 2100 BC. Ook deze dataset is gefiltert vanaf het jaar 1900 en de volgende variabelen zijn toegevoegd aan de al samengstelde dataset: <br>
+<code class="docutils literal notranslate"><span class="pre">YEAR</span></code>, <code class="docutils literal notranslate"><span class="pre">DAMAGE_TOTAL_DESCRIPTION</span></code>, <code class="docutils literal notranslate"><span class="pre">COUNTRY</span></code>, <code class="docutils literal notranslate"><span class="pre">LONGITUDE</span></code>, <code class="docutils literal notranslate"><span class="pre">LATITUDE</span></code>, <code class="docutils literal notranslate"><span class="pre">DEATHS_TOTAL_DESCRIPTION</span></code>, <code class="docutils literal notranslate"><span class="pre">HOUSES_TOTAL_DESCRIPTION</span></code>.<br>
+Deze beschrijvingen waren ingedeeld in vier categorieën, waarvan de mediaanwaarde per categorie is gebruikt als representatieve numerieke waarde voor verdere analyse, deze variabelen zijn dan ook gebruikt in de plaats gezet van eerdere variabelen <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Deaths</span></code> en <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Damages</span></code>, omdat die variabelen teveel missende waarden hadden. De gebruikte categorieën en bijbehorende mediaanwaarden worden hieronder uiteengezet.<br><br>
+Voor de variabelen <code class="docutils literal notranslate"><span class="pre">DEATHS_TOTAL_DESCRIPTION</span></code> en <code class="docutils literal notranslate"><span class="pre">HOUSES_TOTAL_DESCRIPTOIN</span></code>:</p>
+<ul class="simple">
+<li><p>None reported: 0</p></li>
+<li><p>Few (~1 to 50 people): 25,</p></li>
+<li><p>Some (~51 to 100 people): 75,</p></li>
+<li><p>Many (~101 to 1,000 people): 550,</p></li>
+<li><p>Very Many (~1001 or more people): 1500</p></li>
+</ul>
+<section id="variabelenbeschrijving">
+<h2>Variabelenbeschrijving<a class="headerlink" href="#variabelenbeschrijving" title="Link to this heading">#</a></h2>
+<p>De variabelen in de samengestelde dataset kunnen als volgt worden geclassificeerd:</p>
+<ul class="simple">
+<li><p>Continue / Ratio variabelen: <code class="docutils literal notranslate"><span class="pre">mmrom1993-2008average</span></code> en <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Affected</span></code></p></li>
+<li><p>Discrete / Ordinale variabelen: <code class="docutils literal notranslate"><span class="pre">DEATHS_TOTAL_DESCRIPTION</span></code>, <code class="docutils literal notranslate"><span class="pre">DAMAGE_TOTAL_DESCRIPTION</span></code> en <code class="docutils literal notranslate"><span class="pre">HOUSES_TOTAL_DESCRIPTION</span></code> (allemaal omgezet in mediaanwaarden)</p></li>
+<li><p>Discrete / Nominale variabelen:<code class="docutils literal notranslate"><span class="pre">Country</span></code>, <code class="docutils literal notranslate"><span class="pre">Region</span></code>, <code class="docutils literal notranslate"><span class="pre">Continent</span></code>, <code class="docutils literal notranslate"><span class="pre">Origin</span></code>, <code class="docutils literal notranslate"><span class="pre">River</span> <span class="pre">Basin</span></code>, <code class="docutils literal notranslate"><span class="pre">Location</span></code> en <code class="docutils literal notranslate"><span class="pre">Disaster</span> <span class="pre">Subtype</span></code></p></li>
+<li><p>Discrete / Interval variabelen: <code class="docutils literal notranslate"><span class="pre">Year</span></code></p></li>
+<li><p>Geagrafische variabelen: <code class="docutils literal notranslate"><span class="pre">Latitude</span></code> en <code class="docutils literal notranslate"><span class="pre">Lonitude</span></code>
+<br><br></p></li>
+</ul>
+<p>De uiteindelijke samengestelde dataset bevat voldoende variatie in type en schaal om meerdere invalshoeken te verkennen en patronen in kaart te brengen, met als focus relatiet ussen tsunami’s, hun schade, slachtoffers, geografische locatie en de ontwikkeling van de zeespiegel over de tijd.</p>
+</section>
+<section id="aggregaties">
+<h2>Aggregaties<a class="headerlink" href="#aggregaties" title="Link to this heading">#</a></h2>
+<p>Voor dieverse visualisaties is gebruikgemaakt van aggregaties, onder andere bij het berekenen van de impact score van een tsunami. <b>wordt nog uitgeled<b></p>
 </section>
 </section>
 
@@ -460,7 +487,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opschonen">Opschonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabelenbeschrijving">Variabelenbeschrijving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregaties">Aggregaties</a></li>
 </ul>
   </nav></div>
 
