@@ -5,5 +5,5 @@ format: jb-book
 root: docs/home
 chapters:
 - file: docs/introductie
-- file: docs/officiele versie
+- file: docs/voorindatastory
 - file: docs/datasets
