@@ -6,5 +6,5 @@ root: docs/home
 chapters:
 - file: docs/datasets
 - file: docs/voorindatasory
-- file: reflectie
+- file: docs/reflectie
 - file: docs/werkverdeling
